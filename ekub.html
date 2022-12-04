@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <div class="container">
+      <input type="text" id="Name" placeholder="Name Here"><br>
+      <input type="text" id="amount" placeholder="Amount"\n><br>
+      <button type="button" name="button" onclick="add()">Add</button><br>
+    </div>
+    <div class="List">
+      <h1>List</h1>
+      <p id="list"></p>
+      <button type="button" onclick="rand()">Select Random Member</button>
+      <p id="h" color="white"></p>
+    </div>
+  </body>
+  <script>
+    const list=[];
+    let am=0;
+    function add() {
+      const name = document.getElementById("Name").value;
+      const amount =document.getElementById("amount").value;
+      list[am]=name;
+      am++;
+      list[am]=amount;
+      am++;
+      document.getElementById("list").innerHTML=document.getElementById("list").innerHTML+ name+"--------";
+      document.getElementById("list").innerHTML=document.getElementById("list").innerHTML+ amount+"<br>";
+    }
+    function rand(){
+        let a = Math.floor(Math.random()*(list.length/2));
+        document.getElementById("h").innerHTML=list[(a*2)];
+        console.log(a);
+    }
+  </script>
+</html>
